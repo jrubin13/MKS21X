@@ -14,11 +14,19 @@ public class Book {
     public String getAuthor() {
 	return author;
     }
+    public void setAuthor(String writer) {
+	author = writer;
+    }
     public String getTitle() {
 	return title;
     }
+    public void setTitle(String name) {
+	title = name;
     public String getISBN() {
 	return ISBN;
+    }
+    public void getISBN(String num) {
+	ISBN = num;
     }
     public String toString() {
 	return getTitle() + ", " + getAuthor() + ", " + getISBN();
