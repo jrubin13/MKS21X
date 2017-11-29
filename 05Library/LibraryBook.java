@@ -6,7 +6,24 @@ abstract class LibraryBook extends Book implements Comparable<LibraryBook> {
 	callNumber = callNum;
     }
     public String getAuthor() {
-	return super(getAuthor());
+	return super.getAuthor();
     }
     public void setAuthor(String writer) {
-	
+	super.setAuthor(writer);
+    }
+    public String getTitle() {
+	return super.getTitle();
+    }
+    public void setTitle(String name) {
+	super.setTitle(name);
+    }
+    public String getISBN() {
+	return super.getISBN();
+    }
+    public void setISBN(String num) {
+	super.setISBN(num);
+    }
+    abstract void checkout(String patron, String due);
+    abstract void returned();
+    abstract String circulationStatus();
+    public int compareTo
