@@ -22,10 +22,11 @@ public class Book {
     }
     public void setTitle(String name) {
 	title = name;
+    }
     public String getISBN() {
 	return ISBN;
     }
-    public void getISBN(String num) {
+    public void setISBN(String num) {
 	ISBN = num;
     }
     public String toString() {

@@ -36,7 +36,7 @@ public class ReferenceBook extends LibraryBook {
     public void checkout(String patron, String due) {
 	System.out.println("error: " + patron + " cannot check out a reference book");
     }
-    public void circulationStatus() {
-	System.out.println("error: non-circulating reference book");
+    public String circulationStatus() {
+        return "error: non-circulating reference book";
     }
 }
