@@ -39,5 +39,6 @@ abstract class LibraryBook extends Book implements Comparable<LibraryBook> {
 
     public String toString() {
 	return getTitle() + ", " + getAuthor() + ", " + getISBN() + ", " circulationStatus() + ", " + getCallNumber();
+    }
 }
     

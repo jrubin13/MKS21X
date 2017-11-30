@@ -30,6 +30,9 @@ public class ReferenceBook extends LibraryBook {
 	super.setISBN(num);
     }
 
+    public void returned() {
+	System.out.println("error: reference book could not have been checked out, return impossible");
+    }
     public void checkout(String patron, String due) {
 	System.out.println("error: " + patron + " cannot check out a reference book");
     }
