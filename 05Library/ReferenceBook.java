@@ -11,6 +11,12 @@ public class ReferenceBook extends LibraryBook {
     public void setCollection(String col) {
 	collection = col;
     }
+    public String getCallNumber() {
+	return super.getCallNumber();
+    }
+    public void setCallNumber(String num) {
+	super.setCallNumber(num);
+    }
     public String getAuthor() {
 	return super.getAuthor();
     }
@@ -38,5 +44,8 @@ public class ReferenceBook extends LibraryBook {
     }
     public String circulationStatus() {
         return "error: non-circulating reference book";
+    }
+    public String toString() {
+	return "Book title: " + getTitle() + "; Author: " + getAuthor() + "; ISBN: " + getISBN() + "; Call Number: " + getCallNumber() + "; collection: " + getCollection();
     }
 }
