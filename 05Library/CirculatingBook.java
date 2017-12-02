@@ -3,15 +3,10 @@ public class CirculatingBook extends LibraryBook {
     private String dueDate;
     public CirculatingBook(String writer, String name, String num, String callNum) {
 	super(writer, name, num, callNum);
-	curentHolder = null;
+	currentHolder = null;
 	dueDate = null;
     }
-    public String getCollection() {
-	return super.getCollection();
-    }
-    public void setCollection(String col) {
-	super.setCollection(col);
-    }
+
     public String getCallNumber() {
 	return super.getCallNumber();
     }
@@ -65,12 +60,13 @@ public class CirculatingBook extends LibraryBook {
 	}
     }
     public String toString() {
-	String ans = "Book title: " + getTitle() + "; Author: " + getAuthor() + "; ISBN: " + getISBN() + "; Call Number: " + getCallNumber() + "; collection: " + getCollection();
+	String ans = "Book title: " + getTitle() + "; Author: " + getAuthor() + "; ISBN: " + getISBN() + "; Call Number: " + getCallNumber();
 	if (currentHolder != null) {
 	    ans = ans + "; Holder: " + getCurrentHolder();
 	}
 	if (dueDate != null) {
 	    ans = ans + "; Due Date: " + getDueDate();
 	}
+	return ans;
     }
 }
