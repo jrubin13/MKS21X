@@ -1,7 +1,7 @@
 //Rubin, Jeremy
 //APCS Period 9
 //SuperArray Lab
-public class SuperArray {
+public class SuperArray implements Iterable<String>{
     private String[] data = new String[10];
     private int size = 0;
     public SuperArray() {
