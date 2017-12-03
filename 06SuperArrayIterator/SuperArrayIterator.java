@@ -1,3 +1,4 @@
+import java.util.Iterator;
 public class SuperArrayIterator implements Iterator<String>{
     private int place;
     private int end;
@@ -7,13 +8,14 @@ public class SuperArrayIterator implements Iterator<String>{
 	place = 0;
 	end = data.length();
     }
-    public Integer next() {
+    public String next() {
 	if (hasNext()) {
 	    place += 1;
 	}
 	else {
 	    System.exit(0);
 	}
+	return data[place];
     }
     public boolean hasNext() {
 	if (place < end) {

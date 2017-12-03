@@ -1,6 +1,7 @@
 //Rubin, Jeremy
 //APCS Period 9
 //SuperArray Lab
+import java.util.Iterator;
 public class SuperArray implements Iterable<String>{
     private String[] data = new String[10];
     private int size = 0;
@@ -137,5 +138,8 @@ public class SuperArray implements Iterable<String>{
 	    }
 	}
 	return false;
+    }
+    public Iterator<String> Iterable() {
+	return new SuperArrayIterator(data);
     }
 }
