@@ -2,11 +2,11 @@ import java.util.Iterator;
 public class SuperArrayIterator implements Iterator<String>{
     private int place;
     private int end;
-    private String[] = data;
-    public SuperArrayIterator(SuperArray a) {
+    private String[] data;
+    public SuperArrayIterator(String[] a) {
 	data = a;
 	place = 0;
-	end = data.length();
+	end = data.length;
     }
     public String next() {
 	if (hasNext()) {

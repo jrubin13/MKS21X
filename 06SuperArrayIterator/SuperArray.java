@@ -139,7 +139,7 @@ public class SuperArray implements Iterable<String>{
 	}
 	return false;
     }
-    public Iterator<String> Iterable() {
+    public Iterator<String> iterator() {
 	return new SuperArrayIterator(data);
     }
 }
