@@ -140,6 +140,6 @@ public class SuperArray implements Iterable<String>{
 	return false;
     }
     public Iterator<String> iterator() {
-	return new SuperArrayIterator(data);
+	return new  SuperArrayIterator(data, 0, getSize());
     }
 }

@@ -3,10 +3,10 @@ public class SuperArrayIterator implements Iterator<String>{
     private int place;
     private int end;
     private String[] data;
-    public SuperArrayIterator(String[] a) {
+    public SuperArrayIterator(String[] a, int begin, int finish) {
 	data = a;
-	place = 0;
-	end = data.length;
+	place = begin;
+	end = finish;
     }
     public String next() {
 	if (hasNext()) {
@@ -15,7 +15,7 @@ public class SuperArrayIterator implements Iterator<String>{
 	else {
 	    System.exit(0);
 	}
-	return data[place];
+	return data[place-1];
     }
     public boolean hasNext() {
 	if (place < end) {
