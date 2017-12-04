@@ -34,13 +34,20 @@ public class Barcode {
 	String ans = "";
 	int value = 0;
 	for (int i = 0; i < data.length(); i++) {
-	    value = i;
-	    for (int x = 0; x < converter.length; x++) {
-		if (x == value) {
-		    ans += converter[x];
-		}
-	    }
+	    value = data.charAt(i) - 48;
+	    ans += converter[value];
 	}
+	return ans + converter[getCheck()];
+    }
+    public int getCheck() {
+	int ans = 0;
+	for (int i = 0; i < data.length(); i++) {
+	    ans += (int)data.charAt(i);
+	}
+	ans = ans % 10;
 	return ans;
+    }
+    public String toString() {
+	return getCode() + " (" + getZip() + ")";
     }
 }

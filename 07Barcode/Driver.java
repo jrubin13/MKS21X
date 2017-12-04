@@ -3,10 +3,10 @@ public class Driver{
     Barcode a = new Barcode("11245");
     Barcode b = new Barcode("38760");
     Barcode c = new Barcode("11245");
-    Barcode d = new Barcode("00234");
+    Barcode d = new Barcode("00294");
 
     System.out.println(a.getZip());//11245
-    System.out.println(d.getZip());//00234
+    System.out.println(d.getZip());//00294
     System.out.println(a.getCode());// |:::||:::||::|:|:|::|:|:|:::||:|
     System.out.println(a.toString());// |:::||:::||::|:|:|::|:|:|:::||:| (11245)
     System.out.println(b);// |::||:|::|:|:::|:||::||::::|::|| (38760)
