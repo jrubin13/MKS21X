@@ -14,6 +14,14 @@ public class Barcode {
 	converter[7] = "|:::|";
 	converter[8] = "|::|:";
 	converter[9] = "|:|::";
+	if (data.length() != 5) {
+	    throw new IllegalArgumentException;
+	}
+	for (int i = 0; i < data.lenth(); i++) {
+	    if ((data.charAt(i) - 48) > 10 || (data.charAt(i) - 48) < 0) {
+		throw new IllegalArgumentException;
+	    }
+	}
     }
     public String getZip() {
 	return data;
@@ -46,6 +54,18 @@ public class Barcode {
 	}
 	ans = ans % 10;
 	return ans;
+    }
+    public static String toCode(String zip) {
+	String ans = "";
+	int value = 0;
+	for (int i = 0; i < zip.length(); i++) {
+	    value = zip.charAt(i) - 48;
+	    ans += converter[value];
+	}
+	return ans;
+    }
+    public String toZip (String code) {
+
     }
     public String toString() {
 	return getCode() + " (" + getZip() + ")";
