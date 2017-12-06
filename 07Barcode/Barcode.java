@@ -116,6 +116,21 @@ public class Barcode {
 	converter[9] = "|:|::";
 	String value = "";
 	String ans = "";
+	int digit = 0;
+	String checkDigit = code.substring(code.length()-6);
+	for (int x = 0; x < converter.length; x++) {
+	    if (checkDigit.equals(converter[x])) {
+	        digit = x;
+	    }
+	}
+	int check = 0;
+	for (int i = 0; i < code.length(); i++) {
+	    check += (int)code.charAt(i);
+	}
+	check = check % 10;
+	if (check != digit) {
+	    throw new IllegalArgumentException();
+	}
 	for (int i = 1; i < code.length()-6; i+=5) {
 	    value = code.substring(i, i+5);
 	    if (value.equals(":::::") || value.equals("|||||")) {
@@ -130,6 +145,7 @@ public class Barcode {
 	if (ans.length() != 5) {
 	  throw new IllegalArgumentException();
 	}
+	
 	return ans;
     }
     public String toString() {
