@@ -5,6 +5,9 @@ public class ReverseCharSequence implements CharSequence{
 	    str += a.charAt(i);
 	}
     }
+    public String toString() {
+	return str;
+    }
     public char charAt(int index) {
 	for (int i = 0; i < str.length(); i++) {
 	    if (index == i) {
@@ -28,18 +31,12 @@ public class ReverseCharSequence implements CharSequence{
     
     public String subSequence(int start, int end) {
 	String ans = "";
-	for (int i = start; i <= end; i++) {
+	for (int i = start; i < end; i++) {
 	    if (i >= str.length()) {
 		return ans;
 	    }
 	    ans += str.charAt(i);
 	}
 	return ans;
-    }
-    public static void main(String[] args) {
-	ReverseCharSequence ans = new ReverseCharSequence("ymerej");
-	System.out.println(ans.length());
-	System.out.println(ans.charAt(3));
-	System.out.println(ans.subSequence(0,8));
     }
 }
