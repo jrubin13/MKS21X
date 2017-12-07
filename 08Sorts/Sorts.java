@@ -5,19 +5,18 @@ public class Sorts{
     }
     
     public static void selectionSort(int[] data) {
-	int small = data[0];
+	int place;
 	int store = 0;
-	int place = 0;
 	for (int i = 0; i < data.length; i++) {
+	    store = i;
 	    for (int x = i+1; x < data.length; x++) {
-		if (data[x] <= small) {
-		    small = data[x];
-		    place = x;
+		if (data[x] < data[store]) {
+		    store = x;
 		}
 	    }
-	    store = data[i];
-	    data[i] = small;
-	    data[place] = store;
+	    place = data[i];
+	    data[i] = data[store];
+	    data[store] = place;
 	}
     }
     public static void main(String[] args) {
