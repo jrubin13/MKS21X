@@ -71,7 +71,6 @@ public class Sorts{
         System.out.println(Arrays.toString(randish));                     
 	selectionSort(randish);                                  
         System.out.println(Arrays.toString(randish));
-    }
+	} */
 }
-    */
     
