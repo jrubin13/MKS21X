@@ -39,20 +39,20 @@ public class Sorts{
     public static void bubbleSort(int[] data) {
 	int i = 0;
 	boolean swap = true;
-	while (swap == true) {
+	while (i < data.length-1) {
 	    if (data[i] > data[i+1]) {
-		swap(data, data[i], data[i+1]);
+		swap(data, i, i+1);
 		swap = true;
 	    }
 	    i++;
 	    if (i == data.length -1) {
-		if (swap == true) {
-		    i = 0;
-		}
 		if (swap == false) {
-		    system.exit(0);
+		    i = data.length;
 		}
-		swap = false;
+		else {
+		    i = 0;
+		    swap = false;
+		}
 	    }
 	}
     }
