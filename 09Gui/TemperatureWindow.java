@@ -20,21 +20,26 @@ public class TemperatureWindow extends JFrame implements ActionListener{
 	ctof = new JButton("Celsius to Fahrenheit");
 	ctof.addActionListener(this);
 	pane.add(ctof);
-	degree = new JTextField(5);
+	degree = new JTextField(30);
 	pane.add(degree);
     }
 
     public void actionPerformed(ActionEvent e) {
 	String event = e.getActionCommand();
 	//System.out.println(event);
-	if (event.equals("Fahrenheit to Celsius")) {
-	    double temp = Double.parseDouble(degree.getText());
-	    degree.setText(Double.toString(FtoC(temp)));
+	try {
+	    if (event.equals("Fahrenheit to Celsius")) {
+		double temp = Double.parseDouble(degree.getText());
+		degree.setText(Double.toString(FtoC(temp)));
+	    }
+	    if (event.equals("Celsius to Fahrenheit")) {
+		double temp = Double.parseDouble(degree.getText());
+		degree.setText(Double.toString(CtoF(temp)));
+	    }
 	}
-	if (event.equals("Celsius to Fahrenheit")) {
-	    double temp = Double.parseDouble(degree.getText());
-	    degree.setText(Double.toString(CtoF(temp)));
-	}   
+	catch (Exception f) {
+	    degree.setText("Please enter a number");
+	}
     }
     
     public static double CtoF(double t) {
