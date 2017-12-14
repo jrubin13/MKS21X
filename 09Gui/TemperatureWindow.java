@@ -15,8 +15,10 @@ public class TemperatureWindow extends JFrame implements ActionListener{
 	pane = this.getContentPane();
 	pane.setLayout(new FlowLayout());
 	ftoc = new JButton("Fahrenheit to Celsius");
+	ftoc.addActionListener(this);
 	pane.add(ftoc);
 	ctof = new JButton("Celsius to Fahrenheit");
+	ctof.addActionListener(this);
 	pane.add(ctof);
 	degree = new JTextField(5);
 	pane.add(degree);
@@ -24,12 +26,12 @@ public class TemperatureWindow extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent e) {
 	String event = e.getActionCommand();
-	System.out.println(event);
-	if (ftoc.isSelected()) {
+	//System.out.println(event);
+	if (event.equals("Fahrenheit to Celsius")) {
 	    double temp = Double.parseDouble(degree.getText());
 	    degree.setText(Double.toString(FtoC(temp)));
 	}
-	if (ctof.isSelected()) {
+	if (event.equals("Celsius to Fahrenheit")) {
 	    double temp = Double.parseDouble(degree.getText());
 	    degree.setText(Double.toString(CtoF(temp)));
 	}   
