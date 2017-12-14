@@ -21,8 +21,15 @@ public class TemperatureWindow extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
 	String event = e.getActionCommand();
 	System.out.println(event);
+	double temp = Integer.toString(degree.getText());
 	if (event.equals("Fahrenheit to Celsius")) {
-	    
+	    temp = FtoC(temp);
+	    degree.setText(temp);
+	}
+	if (event.equals("Celsius to Fahrenheit")) {
+	    temp = CtoF(temp);
+	    degree.setText(temp);
+	}   
     }
     
     public static double CtoF(double t) {
