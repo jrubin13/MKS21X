@@ -1,6 +1,6 @@
-public class ReverseCharSequence implements CharSequence{
+public class ReversedCharSequence implements CharSequence{
     private String str = "";
-    public ReverseCharSequence(String a) {
+    public ReversedCharSequence(String a) {
 	for (int i = a.length()-1; i >= 0; i--) {
 	    str += a.charAt(i);
 	}
