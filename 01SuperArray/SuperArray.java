@@ -51,7 +51,7 @@ public class SuperArray {
     }
     public String set(int index, String element) {
 	if (index < 0 || index >= size()) {
-	    throw new UnsupportedOperationException();
+	    throw new IndexOutOfBoundsException();
 	}
 	String old = data[index];
 	data[index] = element;
