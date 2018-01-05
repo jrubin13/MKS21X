@@ -56,21 +56,21 @@ public class Sorts{
 	    }
 	}
     }
-    /*
+    
     public static void main(String[] args) {
         int[] randish = new int[15];           //random list
         for(int i = 0 ; i < randish.length; i++){             
             randish[i] =(int)(Math.random()*100);       
 	 }                                                   
-	int[] randish = new int[3]; //a bunch of 0's
-	int[] randish = new int[0]; //empty list
-	int[] randish = new int[3]; //reverse list
-        randish[2] = 1;
-	randish[1] = 2;
-	randish[0] = 3;
+	//int[] randish = new int[3]; //a bunch of 0's
+	//int[] randish = new int[0]; //empty list
+	//int[] randish = new int[3]; //reverse list
+        //randish[2] = 1;
+	//randish[1] = 2;
+	//randish[0] = 3;
         System.out.println(Arrays.toString(randish));                     
 	selectionSort(randish);                                  
         System.out.println(Arrays.toString(randish));
-	} */
+	} 
 }
     
