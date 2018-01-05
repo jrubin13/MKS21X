@@ -53,6 +53,9 @@ public class SuperArray {
 	if (index < 0 || index >= size()) {
 	    throw new UnsupportedOperationException();
 	}
+	if (element.equals("")) {
+		throw new UnsupportedOperationException();
+	}
 	String old = data[index];
 	data[index] = element;
 	return old;
