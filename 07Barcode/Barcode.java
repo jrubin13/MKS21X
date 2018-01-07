@@ -102,7 +102,7 @@ public class Barcode {
 	  if (code.charAt(i) != ':' && code.charAt(i) != '|') {
 		throw new IllegalArgumentException();
 	  }
-	}
+	}	
 	String[] converter = new String[10];
 	converter[0] = "||:::";
         converter[1] = ":::||";
@@ -116,21 +116,12 @@ public class Barcode {
 	converter[9] = "|:|::";
 	String value = "";
 	String ans = "";
-	int digit = 0;
-	String checkDigit = code.substring(code.length()-6);
-	for (int x = 0; x < converter.length; x++) {
-	    if (checkDigit.equals(converter[x])) {
-	        digit = x;
-	    }
-	}
 	int check = 0;
 	for (int i = 0; i < code.length(); i++) {
 	    check += (int)code.charAt(i);
 	}
+	int sum = 0;
 	check = check % 10;
-	if (check != digit) {
-	    throw new IllegalArgumentException();
-	}
 	for (int i = 1; i < code.length()-6; i+=5) {
 	    value = code.substring(i, i+5);
 	    if (value.equals(":::::") || value.equals("|||||")) {
@@ -139,13 +130,24 @@ public class Barcode {
 	    for (int x = 0; x < converter.length; x++) {
 		if (value.equals(converter[x])) {
 		    ans += x;
+		    sum += (int)x;
 		}
+	    }
+	}
+	int checkSum = 0;
+	String checkCode = code.substring(code.length()-6, code.length()-1);
+	for (int x = 0; x < converter.length; x++) {
+	    if (checkCode.equals(converter[x])) {
+		checkSum = x;
 	    }
 	}
 	if (ans.length() != 5) {
 	  throw new IllegalArgumentException();
 	}
 	
+	if (checkSum != sum) {
+	    throw new IllegalArgumentException();
+	}
 	return ans;
     }
     public String toString() {
